@@ -30,7 +30,7 @@ def main():
     y = to_categorical(y.astype("int"))
 
     n_samples, n_features = X.shape
-    n_hidden = 512
+    n_hidden = 16
 
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.4, seed=1)
 
@@ -40,15 +40,15 @@ def main():
 
     clf.add(Dense(n_hidden, input_shape=(n_features,)))
     clf.add(Activation('leaky_relu'))
-    clf.add(Dense(n_hidden))
-    clf.add(Activation('leaky_relu'))
-    clf.add(Dropout(0.25))
-    clf.add(Dense(n_hidden))
-    clf.add(Activation('leaky_relu'))
-    clf.add(Dropout(0.25))
-    clf.add(Dense(n_hidden))
-    clf.add(Activation('leaky_relu'))
-    clf.add(Dropout(0.25))
+    #clf.add(Dense(n_hidden))
+    #clf.add(Activation('leaky_relu'))
+    #clf.add(Dropout(0.25))
+    #clf.add(Dense(n_hidden))
+    #clf.add(Activation('leaky_relu'))
+    #clf.add(Dropout(0.25))
+    #clf.add(Dense(n_hidden))
+    #clf.add(Activation('leaky_relu'))
+    #clf.add(Dropout(0.25))
     clf.add(Dense(10))
     clf.add(Activation('softmax'))
 
